@@ -7,11 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
@@ -25,16 +21,15 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         mInflater=LayoutInflater.from(context);
         this.mWordList=wordList;
     }
-    @NonNull
-    @NotNull
+
     @Override
-    public WordListAdapter.WordViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public WordListAdapter.WordViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View mItemView= mInflater.inflate(R.layout.worldlist_item,parent,false);
         return new WordViewHolder(mItemView, this);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull WordListAdapter.WordViewHolder holder, int position) {
+    public void onBindViewHolder(WordListAdapter.WordViewHolder holder, int position) {
         String mCurrent=mWordList.get(position);
         holder.wordItemView.setText(mCurrent);
     }
